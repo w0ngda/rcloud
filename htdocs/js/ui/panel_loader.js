@@ -88,7 +88,7 @@ RCloud.UI.panel_loader = (function() {
                     name: 'notebook-tree',
                     title: 'Notebooks',
                     icon_class: 'icon-folder-open',
-                    colwidth: 3,
+                    colwidth: 2,
                     greedy: true,
                     sort: 1000,
                     panel: RCloud.UI.notebooks_frame
@@ -98,7 +98,7 @@ RCloud.UI.panel_loader = (function() {
                     name: 'search',
                     title: 'Search',
                     icon_class: 'icon-search',
-                    colwidth: 4,
+                    colwidth: 2,
                     sort: 2000,
                     panel: RCloud.UI.search
                 },
@@ -107,7 +107,7 @@ RCloud.UI.panel_loader = (function() {
                     name: 'settings',
                     title: 'Settings',
                     icon_class: 'icon-cog',
-                    colwidth: 3,
+                    colwidth: 2,
                     sort: 3000,
                     panel: RCloud.UI.settings_frame
                 },
@@ -116,7 +116,7 @@ RCloud.UI.panel_loader = (function() {
                     name: 'help',
                     title: 'Help',
                     icon_class: 'icon-question',
-                    colwidth: 5,
+                    colwidth: 2,
                     sort: 4000,
                     panel: RCloud.UI.help_frame
                 },
