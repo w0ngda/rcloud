@@ -155,6 +155,24 @@ RCloud.UI.panel_loader = (function() {
                     colwidth: 3,
                     sort: 4000,
                     panel: RCloud.UI.session_pane
+                },
+                'AWS': {
+                    side: 'right',
+                    name: 'aws-console',
+                    title: 'AWS',
+                    icon_class: 'icon-comments',
+                    colwidth: 3,
+                    sort: 5000,
+                    panel: RCloud.UI.aws_console_frame
+                },
+                Schedule: {
+                    side: 'right',
+                    name: 'schedule',
+                    title: 'Schedule',
+                    icon_class: 'icon-comments',
+                    colwidth: 3,
+                    sort: 6000,
+                    panel: RCloud.UI.schedule_frame
                 }
             });
         },
@@ -173,6 +191,7 @@ RCloud.UI.panel_loader = (function() {
         },
         load: function() {
             function do_side(panels, side) {
+                console.log("this is panels", panels);
                 function do_panel(p) {
                     add_panel(p);
                     // note: panels are not accessible to extensions for pre-load
