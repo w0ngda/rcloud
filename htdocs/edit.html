@@ -1,7 +1,7 @@
 <html>
-  <head>
+<head>
     <title>RCloud</title>
-    <link rel="stylesheet" type="text/css" href="/css/jquery-ui.css" />
+    <link rel="stylesheet" type="text/css" href="/css/jquery-ui.css"/>
     <link rel="stylesheet" type="text/css" href="/css/font-awesome.css"/>
     <link rel="stylesheet" type="text/css" href="/css/jqtree.css"/>
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.css"/>
@@ -34,229 +34,284 @@
 
     <script src="/lib/js/require-common.js"></script>
     <script type="text/javascript" data-main="/lib/js/require-edit.js" src="/lib/js/require.js"></script>
-  </head>
+</head>
 <body style="overflow:hidden">
 <div class="navbar navbar-inverse navbar-fixed-top">
-  <div>
-    <!--div class="container"-->
-      <div id="rcloud-navbar-header" class="navbar-header">
-      </div>
-      <div class="nav-collapse">
-        <ul id="rcloud-navbar-main" class="nav navbar-nav">
-          <li><span><a href="#" id="share-link" title="Shareable Link" class="btn btn-link navbar-btn" style="text-decoration:none; padding-right: 0px" target="_blank"><i class="icon-share"></i></a>
+    <div>
+        <!--div class="container"-->
+        <div id="rcloud-navbar-header" class="navbar-header">
+        </div>
+        <div class="nav-collapse">
+            <ul id="rcloud-navbar-main" class="nav navbar-nav">
+                <li><span><a href="#" id="share-link" title="Shareable Link" class="btn btn-link navbar-btn"
+                             style="text-decoration:none; padding-right: 0px" target="_blank"><i class="icon-share"></i></a>
               <span class="dropdown" style="position:relative; margin-left: -2px; padding-right: 12px">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="view-mode"><b class="caret"></b></a>
                 <ul class="dropdown-menu view-menu" id="view-type"></ul>
               </span>
-          </span></li> <!-- the span breaks the damn bootstrap li > a before .btn business-->
-          <li><button id="star-notebook" title="Add to Interests" type="button" class="btn btn-link navbar-btn" style="padding-left: 3px"><i class="icon-star-empty"></i><sub><span id="curr-star-count" /></sub></button></li>
-          <li><button id="fork-notebook" title="Fork" type="button" class="btn btn-link navbar-btn"><i class="icon-code-fork"></i></button></li>
-          <li><button id="save-notebook" title="Save" type="button" class="btn btn-link navbar-btn disabled" style="display:none;"><i class="icon-save"></i></button></li>
-          <li><button id="revert-notebook" title="Revert" type="button" class="btn btn-link navbar-btn" style="display:none;"><i class="icon-undo"></i></button></li>
-          <li>
-            <span class="button-highlight"></span>
-            <button id="run-notebook" title="Run All" type="button" class="btn btn-link navbar-btn">
-              <i class="icon-play"></i>
-            </button>
-          </li>
-          <li><a href="#"><span id="notebook-author"></span><span id="author-title-dash" style="display:none;">&nbsp;&ndash;&nbsp;</span><span id="rename-notebook" title="Change Title" style="display:none">[<span id="notebook-title"></span>]</a></span><small id="forked-from-desc"></small></li>
-          <li><a href="#" id="readonly-notebook" style="display:none;">(read-only)</a></li>
-          <li><a href="#"><span id="loading"><img id="loading-animation" src="/img/processing.gif" style="height: 20px;width:20px;margin:0"></img></span></a></li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Advanced <b class="caret"></b></a>
-            <ul class="dropdown-menu" id="advanced-menu"></ul>
-          </li>
-          <li class="divider-vertical"></li>
-          <li><a href="/logout.R" id="rcloud-logout">Logout</a></li>
-        </ul>
-      </div>
-    <!--/div-->
-  </div>
+          </span></li>
+                <!-- the span breaks the damn bootstrap li > a before .btn business-->
+                <li>
+                    <button id="star-notebook" title="Add to Interests" type="button" class="btn btn-link navbar-btn"
+                            style="padding-left: 3px"><i class="icon-star-empty"></i><sub><span
+                            id="curr-star-count"/></sub></button>
+                </li>
+                <li>
+                    <button id="fork-notebook" title="Fork" type="button" class="btn btn-link navbar-btn"><i
+                            class="icon-code-fork"></i></button>
+                </li>
+                <li>
+                    <button id="save-notebook" title="Save" type="button" class="btn btn-link navbar-btn disabled"
+                            style="display:none;"><i class="icon-save"></i></button>
+                </li>
+                <li>
+                    <button id="revert-notebook" title="Revert" type="button" class="btn btn-link navbar-btn"
+                            style="display:none;"><i class="icon-undo"></i></button>
+                </li>
+                <li>
+                    <span class="button-highlight"></span>
+                    <button id="run-notebook" title="Run All" type="button" class="btn btn-link navbar-btn">
+                        <i class="icon-play"></i>
+                    </button>
+                </li>
+                <li><a href="#"><span id="notebook-author"></span><span id="author-title-dash" style="display:none;">&nbsp;&ndash;&nbsp;</span><span
+                        id="rename-notebook" title="Change Title" style="display:none">[<span
+                        id="notebook-title"></span>]</span></a>
+                    <small id="forked-from-desc"></small>
+                </li>
+                <li><a href="#" id="readonly-notebook" style="display:none;">(read-only)</a></li>
+                <li><a href="#"><span id="loading"><img id="loading-animation" src="/img/processing.gif"
+                                                        style="height: 20px;width:20px;margin:0"> </img></span></a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Advanced <b class="caret"></b></a>
+                    <ul class="dropdown-menu" id="advanced-menu"></ul>
+                </li>
+                <li class="divider-vertical"></li>
+                <li><a href="/logout.R" id="rcloud-logout">Logout</a></li>
+            </ul>
+        </div>
+        <!--/div-->
+    </div>
 </div>
 
 <!-- snippets for panels, see load_snippet -->
 <script type="text/html" id="notebooks-snippet">
-  <div class="panel-body notebook-tree">
-    <div id="editor-book-tree" class="widget-vsize"></div>
-  </div>
+    <div class="panel-body notebook-tree">
+        <div id="editor-book-tree" class="widget-vsize"></div>
+    </div>
 </script>
 
 <script type="text/html" id="search-snippet">
-  <div class="panel-body" style="padding-bottom: 0;padding-top:3px">
-    <div id="search-wrapper" class="widget-vsize"> <!-- only for sizing -->
-      <div id="search-header">
-        <form id="search-form" action="#">
-          <div class="input-group input-group-sm">
-            <input type="text" class="form-control-ext" id="input-text-search" placeholder="..Search Keyword" style="width: 100%;"></input>
-            <div class="input-group-btn">
-              <button class="btn btn-default-ext" type="submit" style="border-bottom-right-radius: 3;border-top-right-radius: 3">
-                <i class="icon-search"></i>
-              </button>
-               <!--Sort By :-->
-              <select id="sort-by" class="form-control-ext"  data-target="#sort-by" style="width: 65px;">
-                <option value="starcount" selected>Stars</option>
-                <option value="user">User</option>
-                <option value="description">Name</option>
-                <option value="updated_at">Date</option>
-              </select>
-              <!--Order By :-->
-              <select id="order-by" class="form-control-ext" style="width: 60px;">
-                <option value="asc" selected>Asc</option>
-                <option value="desc">Desc</option>
-              </select>
+    <div class="panel-body" style="padding-bottom: 0;padding-top:3px">
+        <div id="search-wrapper" class="widget-vsize"> <!-- only for sizing -->
+            <div id="search-header">
+                <form id="search-form" action="#">
+                    <div class="input-group input-group-sm">
+                        <input type="text" class="form-control-ext" id="input-text-search"
+                               placeholder="..Search Keyword" style="width: 100%;"> </input>
+
+                        <div class="input-group-btn">
+                            <button class="btn btn-default-ext" type="submit"
+                                    style="border-bottom-right-radius: 3px;border-top-right-radius: 3px">
+                                <i class="icon-search"></i>
+                            </button>
+                            <!--Sort By :-->
+                            <select id="sort-by" class="form-control-ext" data-target="#sort-by" style="width: 65px;">
+                                <option value="starcount" selected>Stars</option>
+                                <option value="user">User</option>
+                                <option value="description">Name</option>
+                                <option value="updated_at">Date</option>
+                            </select>
+                            <!--Order By :-->
+                            <select id="order-by" class="form-control-ext" style="width: 60px;">
+                                <option value="asc" selected>Asc</option>
+                                <option value="desc">Desc</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+                <div id="search-summary"></div>
             </div>
-          </div>
-        </form>
-        <div id="search-summary"></div>
-      </div>
-      <div id="search-results-row">
-        <div id="search-results-scroller">
-          <div id="search-results"></div>
+            <div id="search-results-row">
+                <div id="search-results-scroller">
+                    <div id="search-results"></div>
+                </div>
+            </div>
+            <div id="search-results-pagination">
+                <div id="paging"></div>
+            </div>
         </div>
-      </div>
-      <div id="search-results-pagination">
-        <div id="paging"></div>
-      </div>
     </div>
-  </div>
 </script>
 
 <script type="text/html" id="help-snippet">
-  <div id="help-wrapper" class="panel-body widget-vsize">
-    <div id="help-header">
-      <form id="help-form" action="#">
-        <div class="input-group input-group-sm" style="width: 160px;padding-left: 8px;">
-          <input type="text" class="form-control-ext" id="input-text-help" placeholder="..Get help on" style="width: 128px;"></input>
-          <div class="input-group-btn">
-            <button class="btn btn-default-ext" type="submit">
-              <i class="icon-question"></i>
-            </button>
-          </div>
+    <div id="help-wrapper" class="panel-body widget-vsize">
+        <div id="help-header">
+            <form id="help-form" action="#">
+                <div class="input-group input-group-sm" style="width: 160px;padding-left: 8px;">
+                    <input type="text" class="form-control-ext" id="input-text-help" placeholder="..Get help on"
+                           style="width: 128px;"> </input>
+
+                    <div class="input-group-btn">
+                        <button class="btn btn-default-ext" type="submit">
+                            <i class="icon-question"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
         </div>
-      </form>
+        <div id="help-body"></div>
     </div>
-    <div id="help-body"></div>
-  </div>
 </script>
 
 <script type="text/html" id="assets-snippet">
-  <div id="scratchpad-wrapper" class="panel-body" style="padding:0;border:0;position:relative;z-index:1;">
-    <div id="asset-drop-overlay" class="drop-asset-body">
-      <h1 style="vertical-align:middle;position:relative;text-align:center;padding-top:5%;color: lightslategray">Drop File to Asset</h1>
-    </div>
-    <div id="asset-area">
-      <div id="asset-list-wrapper">
-        <ul class="nav nav-tabs" id="asset-list"
-            style="background-color:white; padding-top:5px;
-                   padding-left: 5px"><li id="new-asset"><a href="#">[New Asset]</a></li></ul>
-      </div>
-      <div id="scratchpad-editor-wrapper">
-        <div id="scratchpad-editor" class="widget-vsize">
-          <a id="asset-link" target="_blank" href="#">link</a>
+    <div id="scratchpad-wrapper" class="panel-body" style="padding:0;border:0;position:relative;z-index:1;">
+        <div id="asset-drop-overlay" class="drop-asset-body">
+            <h1 style="vertical-align:middle;position:relative;text-align:center;padding-top:5%;color: lightslategray">
+                Drop File to Asset</h1>
         </div>
-      </div>
+        <div id="asset-area">
+            <div id="asset-list-wrapper">
+                <ul class="nav nav-tabs" id="asset-list"
+                    style="background-color:white; padding-top:5px;
+                   padding-left: 5px">
+                    <li id="new-asset"><a href="#">[New Asset]</a></li>
+                </ul>
+            </div>
+            <div id="scratchpad-editor-wrapper">
+                <div id="scratchpad-editor" class="widget-vsize">
+                    <a id="asset-link" target="_blank" href="#">link</a>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
 </script>
 
 <script type="text/html" id="file-upload-snippet">
-  <div class="panel-body">
-    <div id="file-upload-div" class="widget-vsize">
-      <div id="file-upload-wrapper">
-        <div id="file-upload-controls" class="btn-group-sm">
-          <input type="file" id="file" style="display: inline;" multiple></input>
+    <div class="panel-body">
+        <div id="file-upload-div" class="widget-vsize">
+            <div id="file-upload-wrapper">
+                <div id="file-upload-controls" class="btn-group-sm">
+                    <input type="file" id="file" style="display: inline;" multiple> </input>
           <span class="checkbox" style="display: inline-block; padding-top: 6px;">
             <label>
-              <input type="checkbox" id="upload-to-notebook"/>
-              <span>Upload to notebook</span>
-	    </label>
+                <input type="checkbox" id="upload-to-notebook"/>
+                <span>Upload to notebook</span>
+            </label>
           </span>
-          <button id="upload-submit" class="btn btn-default-ext" type="submit" style="float: right;width: 33px;">
-            <i class="icon-upload-alt"></i>
-          </button>
-          <div class="progress" style="display:none">
-            <div id="progress-bar" class="progress-bar" id="file-progress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div>
-          </div>
-        </div>
-        <div id="file-upload-results-row">
-          <div id="file-upload-results-scroller">
-            <div id="file-upload-results">
+                    <button id="upload-submit" class="btn btn-default-ext" type="submit"
+                            style="float: right;width: 33px;">
+                        <i class="icon-upload-alt"></i>
+                    </button>
+                    <div class="progress" style="display:none">
+                        <div id="progress-bar" class="progress-bar" id="file-progress" role="progressbar"
+                             aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div>
+                    </div>
+                </div>
+                <div id="file-upload-results-row">
+                    <div id="file-upload-results-scroller">
+                        <div id="file-upload-results">
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </div>
-  </div>
 </script>
 
-<script type="text/html", id="comments-snippet">
-  <div class="panel-body">
-    <div id="comments-wrapper">
-      <div id="comments-qux" class="widget-vsize">
-        <div id="comments-container"></div>
-        <div id="comment-entry" class="btn-group-sm">
-          <textarea id="comment-entry-body" class="form-control-ext"></textarea>
-          <button id="comment-submit" class="btn btn-default-ext" type="submit" style="width: 33px; vertical-align: top;">
-            <i class="icon-comment"></i>
-          </button>
+<script type="text/html" , id="comments-snippet">
+    <div class="panel-body">
+        <div id="comments-wrapper">
+            <div id="comments-qux" class="widget-vsize">
+                <div id="comments-container"></div>
+                <div id="comment-entry" class="btn-group-sm">
+                    <textarea id="comment-entry-body" class="form-control-ext"></textarea>
+                    <button id="comment-submit" class="btn btn-default-ext" type="submit"
+                            style="width: 33px; vertical-align: top;">
+                        <i class="icon-comment"></i>
+                    </button>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
+</script>
+
+<script type="text/html" , id="aws-console-snippet">
+    <div class="panel-body">
+        <div id="aws-console-wrapper">
+            <div id="aws-console-qux" class="widget-vsize">
+                <div id="aws-console-container"></div>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script type="text/html" , id="schedule-snippet">
+    <div class="panel-body">
+        <div id="aws-console-wrapper">
+            <div id="aws-console-qux" class="widget-vsize">
+                <div id="aws-console-container"></div>
+            </div>
+        </div>
+    </div>
 </script>
 
 <script type="text/html" id="session-info-snippet">
-  <div class="panel-body tight" id="session-info-panel">
-    <div id="session-info" class="widget-vsize"></div>
-  </div>
+    <div class="panel-body tight" id="session-info-panel">
+        <div id="session-info" class="widget-vsize"></div>
+    </div>
 </script>
 
 <script type="text/html" id="command-prompt-snippet">
-  <div id="prompt-area" class="rcloud-prompt nonselectable">
-    <div class="cell-status prompt">
-      <div class="cell-control-bar">
-      </div>
-    </div>
+    <div id="prompt-area" class="rcloud-prompt nonselectable">
+        <div class="cell-status prompt">
+            <div class="cell-control-bar">
+            </div>
+        </div>
 
-    <div id="command-prompt" style="float: left; width:100%;
+        <div id="command-prompt" style="float: left; width:100%;
                                     height: 50px; background:#FFFFFF; border:1px solid
                                     #DDDDDD"></div>
-  </div>
+    </div>
 </script>
 
 <script type="text/html" id="left-pane-collapser-snippet">
-  <div style="position: absolute; left:0; top:0px">
-    <svg height="20" width="20" id="notebook-clicker" style="position:absolute; left:0; top:0px">
-      <polygon points="0,0 20,0 0,20" style="fill:#222;stroke:none"/>
-    </svg>
-    <a id="left-pane-collapser"><i class="icon-minus" style="font-size:0.8em; color:#999; position:absolute; left:2px; top:1px; cursor:pointer"></i> </a>
-  </div>
+    <div style="position: absolute; left:0; top:0px">
+        <svg height="20" width="20" id="notebook-clicker" style="position:absolute; left:0; top:0px">
+            <polygon points="0,0 20,0 0,20" style="fill:#222;stroke:none"/>
+        </svg>
+        <a id="left-pane-collapser"><i class="icon-minus"
+                                       style="font-size:0.8em; color:#999; position:absolute; left:2px; top:1px; cursor:pointer"></i>
+        </a>
+    </div>
 </script>
 
 <script type="text/html" id="right-pane-collapser-snippet">
-  <div style="position: absolute; right:0; top:0px">
-    <svg height="20" width="20" id="notebook-clicker" style="position:absolute; right:0; top:0px">
-      <polygon points="0,0 20,0 20,20" style="fill:#222;stroke:none"/>
-    </svg>
-    <a id="right-pane-collapser"><i class="icon-minus" style="font-size:0.8em; color:#999; position:absolute; right:2px; top:1px; cursor:pointer"></i> </a>
-  </div>
+    <div style="position: absolute; right:0; top:0px">
+        <svg height="20" width="20" id="notebook-clicker" style="position:absolute; right:0; top:0px">
+            <polygon points="0,0 20,0 20,20" style="fill:#222;stroke:none"/>
+        </svg>
+        <a id="right-pane-collapser"><i class="icon-minus"
+                                        style="font-size:0.8em; color:#999; position:absolute; right:2px; top:1px; cursor:pointer"></i>
+        </a>
+    </div>
 </script>
 
 <div class="container nopad" id="main-div">
-  <div class="row">
-    <div class="col-md-1 col-sm-1 no-padding" style="height:100%" id="left-column">
-      <div id="tabs-2">
-        <div class="tab-div">
-          <div class="panel-group" id="accordion-left">
-            <!-- filled in by RCloud.UI.load_panels -->
-          </div>
+    <div class="row">
+        <div class="col-md-1 col-sm-1 no-padding" style="height:100%" id="left-column">
+            <div id="tabs-2">
+                <div class="tab-div">
+                    <div class="panel-group" id="accordion-left">
+                        <!-- filled in by RCloud.UI.load_panels -->
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-    <div class="col-md-10 col-sm-10 no-padding" id="middle-column">
-      <div id="rcloud-cellarea">
+        <div class="col-md-10 col-sm-10 no-padding" id="middle-column">
+            <div id="rcloud-cellarea">
         <span id="notebook-left-resizer" class="notebook-sizer left">
           <span class="bar"></span>
         </span>
@@ -264,23 +319,23 @@
           <span class="bar"></span>
         </span>
 
-        <div id="output" class="tab-div">
-        </div>
+                <div id="output" class="tab-div">
+                </div>
 
-        <div id="end-of-output"></div>
+                <div id="end-of-output"></div>
 
-      </div>
-    </div>
-    <div class="col-md-1 col-sm-1 no-padding" style="height:100%; min-height: 0" id="right-column">
-      <div id="right-tabs">
-        <div class="tab-div">
-          <div class="panel-group" id="accordion-right">
-            <!-- filled in by RCloud.UI.load_panels -->
-          </div>
+            </div>
         </div>
-      </div>
+        <div class="col-md-1 col-sm-1 no-padding" style="height:100%; min-height: 0" id="right-column">
+            <div id="right-tabs">
+                <div class="tab-div">
+                    <div class="panel-group" id="accordion-right">
+                        <!-- filled in by RCloud.UI.load_panels -->
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
 
 <!-- For some bizarre reason, line numbering has garbage characters on --
@@ -298,10 +353,15 @@
 <script type="text/javascript"
         src="/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
-<script type="text/javascript">MathJax && MathJax.Hub.Config({tex2jax: {processEscapes: true,
-  processEnvironments: false, inlineMath: [ ['\\(','\\)'] ],
-  displayMath: [ ['\\[','\\]'] ] },
-  "HTML-CSS": { minScaleAdjust: 125 } });
+<script type="text/javascript">MathJax && MathJax.Hub.Config({
+    tex2jax: {
+        processEscapes: true,
+        processEnvironments: false, inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+    },
+    "HTML-CSS": {minScaleAdjust: 125}
+});
 </script>
 
-</body></html>
+</body>
+</html>
