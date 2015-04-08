@@ -161,7 +161,7 @@ RCloud.UI.aws_console_frame = (function() {
                 for (var i = 0; i < Cluster.nNode; i++) {
                     Cluster.changeLoad(i, Math.round(Math.random() * 100));
                 }
-                render(Cluster.nodeTable);
+                render(Cluster);
             }, 2000);
 
             // var scroll_height = "";
