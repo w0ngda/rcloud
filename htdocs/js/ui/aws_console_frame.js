@@ -3,7 +3,7 @@ RCloud.UI.aws_console_frame = (function() {
     function render(data) {
         // Print header
         d3.select("#aws-console-container")
-            .text("ML-DRF Cluster")
+            .text(function(d) { return d.clusterName; })
             .style("font-size", "10px");
 
         // Enter mode
@@ -15,13 +15,13 @@ RCloud.UI.aws_console_frame = (function() {
 
         divrow.append("div")
             .attr("class", "col-md-3").style("padding-left", 0)
-            .text(function(d) { return d.hostname; });
+            .text(function(d, i) { return d.nodeTable[i-1].hostname; });
 
         divrow.append("div").attr("class", "col-md-3").style("padding-left", 0)
-            .text(function(d) { return d.ipAddress; });
+            .text(function(d, i) { return d.nodeTable[i-1].ipAddress; });
 
         divrow.append("div").attr("class", "col-md-2").style("padding-right", 0)
-            .text(function(d) { return d.status; });
+            .text(function(d, i) { return d.nodeTable[i-1].status; });
 
         col4 = divrow.append("div").attr("class", "col-md-4").style("padding", 0);
 //                .text(function(d) { return d.load; })
@@ -29,15 +29,15 @@ RCloud.UI.aws_console_frame = (function() {
 //                                             else return "black"; });
 
         col4.append("div").attr("class", "bar")
-            .style("width", function (d) { return d.load / 1.5 + "px"; })
-            .style("background-color", function(d) { if (d.load > 90) { return "DarkRed" }
-            else if (d.load > 50) { return "Gold" }
+            .style("width", function (d, i) { return d.nodeTable[i-1].load / 1.5 + "px"; })
+            .style("background-color", function(d, i) { if (d.nodeTable[i-1].load > 90) { return "DarkRed" }
+            else if (d.nodeTable[i-1].load > 50) { return "Gold" }
             else return "DarkGreen"; });
 
         col4.append("div").attr("class", "bar")
-            .style("width", function (d) { return 50 - (d.load / 1.5) + "px"; })
-            .style("background-color", function(d) { if (50 - d.load > 90) { return "DarkRed" }
-            else if (50 - d.load > 50) { return "Gold" }
+            .style("width", function (d, i) { return 50 - (d.nodeTable[i-1].load / 1.5) + "px"; })
+            .style("background-color", function(d, i) { if (50 - d.nodeTable[i-1].load > 90) { return "DarkRed" }
+            else if (50 - d.nodeTable.load > 50) { return "Gold" }
             else return "DarkGreen"; });
 
 
@@ -63,7 +63,7 @@ RCloud.UI.aws_console_frame = (function() {
         this.nCore = ncore;
         this.nodeTable = [];
 
-        console.log("cluster name / ncode", this.clusterName, this.nCore);
+
         for (var i = 0; i < nnode; i++) {
             this.nodeTable[i] = { "hostname": (i == 0) ? "master" : "node" + pad(i),
                 "ipAddress": "192.168.100." + (i + 1.0),
@@ -112,7 +112,7 @@ RCloud.UI.aws_console_frame = (function() {
             // replace array with api callback d3.json( http.get api, callback )
             // visualization is data driven
 
-            Cluster.create("test1", 4, 4);
+            Cluster.create("ML Cluster1", 4, 4);
             Cluster.addNode();
             Cluster.addNode();
             Cluster.removeNode();
@@ -136,7 +136,7 @@ RCloud.UI.aws_console_frame = (function() {
             Cluster.addNode();
             Cluster.addNode();
             Cluster.addNode();
-            console.log("cluster", Cluster);
+
 
 /*            var clusterStatus = [
                 { "hostname": "master",
@@ -167,9 +167,9 @@ RCloud.UI.aws_console_frame = (function() {
             // var scroll_height = "";
 
             // Print header
-            d3.select("#aws-console-container")
-                .text("ML-DRF Cluster")
-                .style("font-size", "10px");
+//            d3.select("#aws-console-container")
+//                .text("ML-DRF Cluster")
+//                .style("font-size", "10px");
 
             render(Cluster.nodeTable);
 
