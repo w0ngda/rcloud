@@ -162,7 +162,7 @@ RCloud.UI.aws_console_frame = (function() {
                     Cluster.changeLoad(i, Math.round(Math.random() * 100));
                 }
                 render(Cluster);
-            }, 2000); 
+            }, 2000);
 
             // var scroll_height = "";
 
@@ -171,7 +171,7 @@ RCloud.UI.aws_console_frame = (function() {
 //                .text("ML-DRF Cluster")
 //                .style("font-size", "10px");
 
-            render(Cluster.nodeTable);
+            render(Cluster);
 
         }
     };
